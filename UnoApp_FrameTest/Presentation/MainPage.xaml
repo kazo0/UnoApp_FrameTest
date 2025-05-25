@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="UnoApp_FrameTest.Presentation.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnoApp_FrameTest.Presentation"
+    xmlns:uen="using:Uno.Extensions.Navigation.UI"
+    xmlns:utu="using:Uno.Toolkit.UI"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    NavigationCacheMode="Required">
+
+    <NavigationView>
+        <NavigationView.MenuItems>
+            <NavigationViewItem
+                uen:Navigation.Request="./Second"
+                Content="Second Page"
+                Icon="Home" />
+            <NavigationViewItem
+                uen:Navigation.Request="./Third"
+                Content="Third Page"
+                Icon="Home" />
+        </NavigationView.MenuItems>
+        <Frame uen:Region.Attached="True" />
+    </NavigationView>
+</Page>

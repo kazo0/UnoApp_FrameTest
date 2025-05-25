@@ -8,17 +8,19 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     NavigationCacheMode="Required">
 
-    <NavigationView>
-        <NavigationView.MenuItems>
-            <NavigationViewItem
-                uen:Navigation.Request="./Second"
-                Content="Second Page"
-                Icon="Home" />
-            <NavigationViewItem
-                uen:Navigation.Request="./Third"
-                Content="Third Page"
-                Icon="Home" />
-        </NavigationView.MenuItems>
-        <Frame uen:Region.Attached="True" />
-    </NavigationView>
+     <Grid uen:Region.Attached="True">
+
+        <NavigationView uen:Region.Attached="true">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Second Page"
+                                    uen:Region.Name="Second" />
+                <NavigationViewItem Content="Third Page"
+                                    uen:Region.Name="Third" />
+            </NavigationView.MenuItems>
+
+            <Grid uen:Region.Attached="True"
+                  uen:Region.Navigator="Visibility">
+            </Grid>
+        </NavigationView>
+    </Grid>
 </Page>

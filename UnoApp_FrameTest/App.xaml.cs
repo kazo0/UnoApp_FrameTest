@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Uno.Resizetizer;
 
 namespace UnoApp_FrameTest;
@@ -85,9 +86,11 @@ public partial class App : Application
             new RouteMap("", View: views.FindByViewModel<ShellViewModel>(),
                 Nested:
                 [
-                    new ("Main", View: views.FindByViewModel<MainViewModel>(), IsDefault:true),
-                    new ("Second", View: views.FindByViewModel<SecondViewModel>()),
-                    new ("Third" , View: views.FindByViewModel<ThirdViewModel>())
+                    new ("Main", View: views.FindByViewModel<MainViewModel>(), IsDefault:true, Nested:
+                    [
+                        new ("Second", View: views.FindByViewModel<SecondViewModel>()),
+                        new ("Third" , View: views.FindByViewModel<ThirdViewModel>())
+                    ]),
                 ]
             )
         );
